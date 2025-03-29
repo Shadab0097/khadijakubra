@@ -13,7 +13,7 @@ export default function PaymentDetails() {
   ];
 
   const upiApps = [
-    { 
+    {
       name: 'PhonePe',
       icon: <SiPhonepe className="w-6 h-6" />,
       link: 'phonepe://pay?pa=trust@upi&pn=JamiaKhadijatulKubra'
@@ -59,19 +59,18 @@ export default function PaymentDetails() {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-lg">
+    <div className="bg-white p-6 rounded-lg shadow-lg overflow-x-hidden">
       <h3 className="text-xl font-semibold mb-6 text-center">Payment Details</h3>
-      
+
       <div className="flex border-b mb-6">
         {tabs.map((tab) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`flex items-center space-x-2 px-4 py-2 flex-1 justify-center ${
-              activeTab === tab.id
-                ? 'border-b-2 border-primary text-primary'
-                : 'text-gray-500 hover:text-primary'
-            }`}
+            className={`flex items-center space-x-2 py-2 flex-1 justify-center ${activeTab === tab.id
+              ? 'border-b-2 border-primary text-primary'
+              : 'text-gray-500 hover:text-primary'
+              }`}
           >
             <span className="text-lg">{tab.icon}</span>
             <span>{tab.label}</span>
@@ -84,7 +83,7 @@ export default function PaymentDetails() {
           <div>
             <p className="font-medium">UPI ID: trust@upi</p>
             <p className="text-sm text-gray-600 mt-2 mb-6">Pay using your preferred UPI app</p>
-            
+
             <div className="grid grid-cols-3 gap-4">
               {upiApps.map((app) => (
                 <a
