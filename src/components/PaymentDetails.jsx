@@ -3,6 +3,7 @@ import { FaQrcode, FaUniversity, FaMobileAlt, FaCopy } from 'react-icons/fa';
 import { SiPhonepe, SiPaytm, SiGooglepay } from 'react-icons/si';
 import toast from 'react-hot-toast';
 
+
 export default function PaymentDetails() {
   const [activeTab, setActiveTab] = useState('upi');
 
@@ -57,6 +58,8 @@ export default function PaymentDetails() {
       toast.error('Failed to copy text');
     }
   };
+  const upiId = "9711197176@ptaxis";
+  const upiLink = `upi://pay?pa=${encodeURIComponent(upiId)}&cu=INR`;
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-lg overflow-x-hidden">
@@ -120,13 +123,21 @@ export default function PaymentDetails() {
 
         {activeTab === 'qr' && (
           <div className="text-center">
-            <img
-              src="https://example.com/qr-code.png"
-              alt="Payment QR Code"
-              className="mx-auto w-48 h-48"
-            />
-            <p className="text-sm text-gray-600 mt-4">
-              Scan this QR code using any UPI app to make the payment
+            <div className="mx-auto w-48 h-48 mb-4 p-4 bg-white rounded-lg shadow">
+              <img
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(
+                  upiLink
+                )}`}
+                alt="UPI QR Code"
+                className="w-full h-full object-contain"
+              />
+
+            </div>
+            <p className="text-sm text-gray-600 mt-2">
+              Scan using any UPI app
+            </p>
+            <p className="mt-2 text-sm text-gray-600">
+              UPI ID: <span className="font-mono">9711197176@ptaxis</span>
             </p>
           </div>
         )}
