@@ -16,17 +16,17 @@ export default function PaymentDetails() {
     {
       name: 'PhonePe',
       icon: <SiPhonepe className="w-6 h-6" />,
-      link: 'phonepe://pay?pa=trust@upi&pn=JamiaKhadijatulKubra'
+      link: 'phonepe://pay?pa=9711197176@ptaxis&pn=JamiaKhadijatulKubra'
     },
     {
       name: 'Paytm',
       icon: <SiPaytm className="w-6 h-6" />,
-      link: 'paytmmp://pay?pa=trust@upi&pn=JamiaKhadijatulKubra'
+      link: 'paytmmp://pay?pa=9711197176@ptaxis&pn=JamiaKhadijatulKubra'
     },
     {
       name: 'Google Pay',
       icon: <SiGooglepay className="w-6 h-6" />,
-      link: 'gpay://upi/pay?pa=trust@upi&pn=JamiaKhadijatulKubra'
+      link: 'gpay://upi/pay?pa=9711197176@ptaxis&pn=JamiaKhadijatulKubra'
     }
   ];
 
@@ -67,7 +67,7 @@ export default function PaymentDetails() {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`flex items-center space-x-2 py-2 flex-1 justify-center ${activeTab === tab.id
+            className={`flex items-center space-x-2  py-2 flex-1 justify-center ${activeTab === tab.id
               ? 'border-b-2 border-primary text-primary'
               : 'text-gray-500 hover:text-primary'
               }`}
