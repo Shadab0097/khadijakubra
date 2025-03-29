@@ -70,7 +70,7 @@ export default function PaymentDetails() {
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`flex items-center space-x-2  py-2 flex-1 justify-center ${activeTab === tab.id
+            className={`flex items-center space-x-2 px-1 py-2 flex-1 justify-center ${activeTab === tab.id
               ? 'border-b-2 border-primary text-primary'
               : 'text-gray-500 hover:text-primary'
               }`}
