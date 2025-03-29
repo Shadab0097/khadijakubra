@@ -3,10 +3,10 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const stats = [
-  { label: 'Lives Impacted', value: 50000, suffix: '+' },
-  { label: 'Projects Completed', value: 200, suffix: '+' },
+  { label: 'Lives Impacted', value: 5000, suffix: '+' },
+  { label: 'Projects Completed', value: 50, suffix: '+' },
   { label: 'Communities Served', value: 100, suffix: '+' },
-  { label: 'Volunteers', value: 1000, suffix: '+' }
+  { label: 'Volunteers', value: 100, suffix: '+' }
 ];
 
 export default function ImpactCounter() {
@@ -22,7 +22,7 @@ export default function ImpactCounter() {
         const steps = 50;
         const increment = stat.value / steps;
         let current = 0;
-        
+
         const timer = setInterval(() => {
           current += increment;
           if (current >= stat.value) {

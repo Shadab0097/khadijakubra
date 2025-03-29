@@ -12,32 +12,33 @@ export default function PaymentDetails() {
     { id: 'bank', label: 'Bank Transfer', icon: <FaUniversity /> },
     { id: 'qr', label: 'QR Code', icon: <FaQrcode /> }
   ];
+  const upiId = "8930739977@pthdfc";
 
   const upiApps = [
     {
       name: 'PhonePe',
       icon: <SiPhonepe className="w-6 h-6" />,
-      link: 'phonepe://pay?pa=9711197176@ptaxis&pn=JamiaKhadijatulKubra'
+      link: `upi://pay?pa=${upiId}&cu=INR`
     },
     {
       name: 'Paytm',
       icon: <SiPaytm className="w-6 h-6" />,
-      link: 'paytmmp://pay?pa=9711197176@ptaxis&pn=JamiaKhadijatulKubra'
+      link: `upi://pay?pa=${upiId}&cu=INR`
     },
     {
       name: 'Google Pay',
       icon: <SiGooglepay className="w-6 h-6" />,
-      link: 'gpay://upi/pay?pa=9711197176@ptaxis&pn=JamiaKhadijatulKubra'
+      link: `upi://pay?pa=${upiId}&cu=INR`
     }
   ];
 
   const bankDetails = {
-    accountName: 'Jamia Khadijatul Kubra Welfare and Trust',
-    accountNumber: 'XXXXXXXXXXXX',
-    ifscCode: 'XXXXXXXX',
-    bank: 'Example Bank',
-    branch: 'Main Branch',
-    accountType: 'Savings'
+    accountName: 'Jamia Khadijatul Kubra & Welfare Trust',
+    accountNumber: '255001009977',
+    ifscCode: 'INDB0001377',
+    bank: 'IndusInd Bank Limited',
+    branch: 'SOHNA GURGAON , HARYANA Branch',
+    accountType: 'Current'
   };
 
   const copyToClipboard = async (text, field) => {
@@ -58,7 +59,6 @@ export default function PaymentDetails() {
       toast.error('Failed to copy text');
     }
   };
-  const upiId = "9711197176@ptaxis";
   const upiLink = `upi://pay?pa=${encodeURIComponent(upiId)}&cu=INR`;
 
   return (
@@ -84,7 +84,7 @@ export default function PaymentDetails() {
       <div className="p-4 bg-gray-50 rounded-lg">
         {activeTab === 'upi' && (
           <div>
-            <p className="font-medium">UPI ID: trust@upi</p>
+            <p className="font-medium">UPI ID: {upiId}</p>
             <p className="text-sm text-gray-600 mt-2 mb-6">Pay using your preferred UPI app</p>
 
             <div className="grid grid-cols-3 gap-4">
@@ -137,7 +137,7 @@ export default function PaymentDetails() {
               Scan using any UPI app
             </p>
             <p className="mt-2 text-sm text-gray-600">
-              UPI ID: <span className="font-mono">9711197176@ptaxis</span>
+              UPI ID: <span className="font-mono">{upiId}</span>
             </p>
           </div>
         )}

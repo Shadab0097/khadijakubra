@@ -8,6 +8,10 @@ import image4 from '../assets/gallery/image4.jpg'
 import image5 from '../assets/gallery/image5.jpg'
 import image from '../assets/gallery/image.jpg'
 import image7 from '../assets/gallery/image7.jpg'
+import image8 from '../assets/gallery/image8.jpg'
+
+import image9 from '../assets/gallery/image9.jpg'
+
 
 
 export default function ImageCarousel() {
@@ -31,7 +35,7 @@ export default function ImageCarousel() {
   };
 
   const images = [
-    image1, image2, image3, image4, image5, image, image7,
+    image1, image2, image3, image4, image5, image, image7, image8, image9
   ];
 
   return (
