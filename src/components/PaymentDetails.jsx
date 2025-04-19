@@ -12,7 +12,7 @@ export default function PaymentDetails() {
     { id: 'bank', label: 'Bank Transfer', icon: <FaUniversity /> },
     { id: 'qr', label: 'QR Code', icon: <FaQrcode /> }
   ];
-  const upiId = "8930739977@pthdfc";
+  const upiId = "pos.5259763@indus";
 
   const upiApps = [
     {
